@@ -17,6 +17,10 @@ var COLOR_BLACK = '#000';
 var COLOR_GREY = 'rgba(0, 0, 0, 0.7)';
 var COLOR_RED = 'rgba(255, 0, 0, 1)';
 
+var getRandomColor = function () {
+  return 'rgba(0, 0, 255,' + Math.random() + ')';
+};
+
 var renderCloud = function (ctx, x, y, color) {
   ctx.fillStyle = color;
   ctx.fillRect(x, y, CLOUD_WIDTH, CLOUD_HEIGHT);
@@ -53,7 +57,7 @@ window.renderStatistics = function (ctx, names, times) {
     if (names[i] === 'Вы') {
       ctx.fillStyle = COLOR_RED;
     } else {
-      ctx.fillStyle = 'rgba(0, 0, 255,' + Math.random() + ')';
+      ctx.fillStyle = getRandomColor();
     }
 
     ctx.fillRect(CLOUD_X + BAR_GAP + (BAR_WIDTH + BAR_GAP) * i, BAR_Y, BAR_WIDTH, -(MAX_BAR * times[i] / maxTime));
