@@ -21,7 +21,7 @@ var lastNames = [
   'Ирвинг'
 ];
 
-var coatColor = [
+var coatColors = [
   'rgb(101, 137, 164)',
   'rgb(241, 43, 107)',
   'rgb(146, 100, 161)',
@@ -30,7 +30,7 @@ var coatColor = [
   'rgb(0, 0, 0)'
 ];
 
-var eyesColor = [
+var eyesColors = [
   'black',
   'red',
   'blue',
@@ -50,14 +50,14 @@ var getSimilarWizards = function () {
     similarWizards[i] = {
       name: names[getRandomValue(0, 7)] + ' ' +
       lastNames[getRandomValue(0, 8)],
-      coatColor: coatColor[getRandomValue(0, 6)],
-      eyesColor: eyesColor[getRandomValue(0, 5)]
+      coatColor: coatColors[getRandomValue(0, 6)],
+      eyesColor: eyesColors[getRandomValue(0, 5)]
     };
   }
   return similarWizards;
 };
 
-var Wizards = getSimilarWizards();
+var wizards = getSimilarWizards();
 
 document.querySelector('.setup-similar').classList.remove('hidden');
 
@@ -84,4 +84,4 @@ var renderSimilarWizards = function (similarWizards) {
   similarListElement.appendChild(fragment);
 };
 
-renderSimilarWizards(Wizards);
+renderSimilarWizards(wizards);
