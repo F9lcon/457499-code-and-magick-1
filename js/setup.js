@@ -1,6 +1,6 @@
 'use strict';
 
-var namesData = [
+var names = [
   'Иван',
   'Хуан Себастьян',
   'Кристоф',
@@ -10,7 +10,7 @@ var namesData = [
   'Вашингтон'
 ];
 
-var lastNamesData = [
+var lastNames = [
   'да Марья',
   'Верон',
   'Мирабелла',
@@ -21,7 +21,7 @@ var lastNamesData = [
   'Ирвинг'
 ];
 
-var coatColorData = [
+var coatColor = [
   'rgb(101, 137, 164)',
   'rgb(241, 43, 107)',
   'rgb(146, 100, 161)',
@@ -30,7 +30,7 @@ var coatColorData = [
   'rgb(0, 0, 0)'
 ];
 
-var eyesColorData = [
+var eyesColor = [
   'black',
   'red',
   'blue',
@@ -48,9 +48,10 @@ var getSimilarWizards = function () {
   var similarWizards = [];
   for (var i = 0; i <= 4; i++) {
     similarWizards[i] = {
-      name: namesData[getRandomValue(0, 7)] + ' ' + lastNamesData[getRandomValue(0, 8)], /* не придумал как тут можно соблюсти 80 символов */
-      coatColor: coatColorData[getRandomValue(0, 6)],
-      eyesColor: eyesColorData[getRandomValue(0, 5)]
+      name: names[getRandomValue(0, 7)] + ' ' +
+      lastNames[getRandomValue(0, 8)],
+      coatColor: coatColor[getRandomValue(0, 6)],
+      eyesColor: eyesColor[getRandomValue(0, 5)]
     };
   }
   return similarWizards;
