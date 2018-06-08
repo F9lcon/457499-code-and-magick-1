@@ -57,7 +57,7 @@ var getSimilarWizards = function () {
   return similarWizards;
 };
 
-var similarWizardsData = getSimilarWizards();
+var Wizards = getSimilarWizards();
 
 document.querySelector('.setup-similar').classList.remove('hidden');
 
@@ -84,4 +84,4 @@ var renderSimilarWizards = function (similarWizards) {
   similarListElement.appendChild(fragment);
 };
 
-renderSimilarWizards(similarWizardsData);
+renderSimilarWizards(Wizards);
